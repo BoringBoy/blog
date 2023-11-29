@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>linux 重点记录 | 浮尘</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/blog/img/logo-dxzh3.png">
+    <meta name="description" content="个人博客,专注运维开发等技术的学习与总结。包含Linux、Docker、K8s、Python、Java等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.5e9ec4d3.css" as="style"><link rel="preload" href="/blog/assets/js/app.c1146525.js" as="script"><link rel="preload" href="/blog/assets/js/2.4ba14c4a.js" as="script"><link rel="preload" href="/blog/assets/js/17.b8c8d6e5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.d3aabefd.js"><link rel="prefetch" href="/blog/assets/js/11.7e4967a4.js"><link rel="prefetch" href="/blog/assets/js/12.61b38565.js"><link rel="prefetch" href="/blog/assets/js/13.5d777b97.js"><link rel="prefetch" href="/blog/assets/js/14.cb15923b.js"><link rel="prefetch" href="/blog/assets/js/15.e5998a76.js"><link rel="prefetch" href="/blog/assets/js/16.35171a75.js"><link rel="prefetch" href="/blog/assets/js/18.3dec0710.js"><link rel="prefetch" href="/blog/assets/js/19.458df3bd.js"><link rel="prefetch" href="/blog/assets/js/20.6c24b396.js"><link rel="prefetch" href="/blog/assets/js/21.b6e64ec2.js"><link rel="prefetch" href="/blog/assets/js/22.0626348e.js"><link rel="prefetch" href="/blog/assets/js/23.c9bbad02.js"><link rel="prefetch" href="/blog/assets/js/24.130eef42.js"><link rel="prefetch" href="/blog/assets/js/25.dbc7dff1.js"><link rel="prefetch" href="/blog/assets/js/26.841f1357.js"><link rel="prefetch" href="/blog/assets/js/27.df7552ec.js"><link rel="prefetch" href="/blog/assets/js/28.0dd044fc.js"><link rel="prefetch" href="/blog/assets/js/29.ce6f10d7.js"><link rel="prefetch" href="/blog/assets/js/3.b0c63ae6.js"><link rel="prefetch" href="/blog/assets/js/30.31dd3bc0.js"><link rel="prefetch" href="/blog/assets/js/31.9fe70835.js"><link rel="prefetch" href="/blog/assets/js/32.58785075.js"><link rel="prefetch" href="/blog/assets/js/33.44b0f8d4.js"><link rel="prefetch" href="/blog/assets/js/34.73000c29.js"><link rel="prefetch" href="/blog/assets/js/35.3cf78be4.js"><link rel="prefetch" href="/blog/assets/js/36.2380fd6a.js"><link rel="prefetch" href="/blog/assets/js/37.c10df799.js"><link rel="prefetch" href="/blog/assets/js/38.697aa146.js"><link rel="prefetch" href="/blog/assets/js/39.e936f0c3.js"><link rel="prefetch" href="/blog/assets/js/4.d5e6ad33.js"><link rel="prefetch" href="/blog/assets/js/40.2598bd7b.js"><link rel="prefetch" href="/blog/assets/js/41.3b6e3d0d.js"><link rel="prefetch" href="/blog/assets/js/42.9dbcc9ee.js"><link rel="prefetch" href="/blog/assets/js/43.28db2b44.js"><link rel="prefetch" href="/blog/assets/js/44.41aa9dfe.js"><link rel="prefetch" href="/blog/assets/js/45.5e2c8b25.js"><link rel="prefetch" href="/blog/assets/js/46.66ac584d.js"><link rel="prefetch" href="/blog/assets/js/47.c8924667.js"><link rel="prefetch" href="/blog/assets/js/48.aade3d04.js"><link rel="prefetch" href="/blog/assets/js/49.0706898a.js"><link rel="prefetch" href="/blog/assets/js/5.b2737c38.js"><link rel="prefetch" href="/blog/assets/js/50.f61f239e.js"><link rel="prefetch" href="/blog/assets/js/51.a0364599.js"><link rel="prefetch" href="/blog/assets/js/52.103109d7.js"><link rel="prefetch" href="/blog/assets/js/53.1122a567.js"><link rel="prefetch" href="/blog/assets/js/54.f48a9fb5.js"><link rel="prefetch" href="/blog/assets/js/55.db87477a.js"><link rel="prefetch" href="/blog/assets/js/56.d45aae74.js"><link rel="prefetch" href="/blog/assets/js/57.3be144b2.js"><link rel="prefetch" href="/blog/assets/js/58.432332f5.js"><link rel="prefetch" href="/blog/assets/js/59.6b24ad76.js"><link rel="prefetch" href="/blog/assets/js/6.ccb40a7d.js"><link rel="prefetch" href="/blog/assets/js/60.7748302f.js"><link rel="prefetch" href="/blog/assets/js/61.c7aa9606.js"><link rel="prefetch" href="/blog/assets/js/62.c04796e9.js"><link rel="prefetch" href="/blog/assets/js/63.1e6920be.js"><link rel="prefetch" href="/blog/assets/js/64.64562307.js"><link rel="prefetch" href="/blog/assets/js/65.687ef4af.js"><link rel="prefetch" href="/blog/assets/js/66.618669af.js"><link rel="prefetch" href="/blog/assets/js/67.5f468a94.js"><link rel="prefetch" href="/blog/assets/js/68.735a8d83.js"><link rel="prefetch" href="/blog/assets/js/69.6253eabc.js"><link rel="prefetch" href="/blog/assets/js/7.35625d4c.js"><link rel="prefetch" href="/blog/assets/js/70.4df32360.js"><link rel="prefetch" href="/blog/assets/js/71.8b943237.js"><link rel="prefetch" href="/blog/assets/js/72.361658bc.js"><link rel="prefetch" href="/blog/assets/js/73.b111895b.js"><link rel="prefetch" href="/blog/assets/js/74.64545b29.js"><link rel="prefetch" href="/blog/assets/js/75.7f6937b0.js"><link rel="prefetch" href="/blog/assets/js/76.0fff4884.js"><link rel="prefetch" href="/blog/assets/js/77.2ea0b748.js"><link rel="prefetch" href="/blog/assets/js/78.6d767037.js"><link rel="prefetch" href="/blog/assets/js/79.8a157f8c.js"><link rel="prefetch" href="/blog/assets/js/8.fc3453a8.js"><link rel="prefetch" href="/blog/assets/js/80.29843671.js"><link rel="prefetch" href="/blog/assets/js/81.5255b24a.js"><link rel="prefetch" href="/blog/assets/js/82.03186e2c.js"><link rel="prefetch" href="/blog/assets/js/83.a72eed1f.js"><link rel="prefetch" href="/blog/assets/js/84.1bbef546.js"><link rel="prefetch" href="/blog/assets/js/85.91e42926.js"><link rel="prefetch" href="/blog/assets/js/86.1890447e.js"><link rel="prefetch" href="/blog/assets/js/87.5b39b593.js"><link rel="prefetch" href="/blog/assets/js/88.ac0c0836.js"><link rel="prefetch" href="/blog/assets/js/89.ea790194.js"><link rel="prefetch" href="/blog/assets/js/9.f9ba1cd3.js"><link rel="prefetch" href="/blog/assets/js/90.714d06ea.js"><link rel="prefetch" href="/blog/assets/js/91.40f37595.js"><link rel="prefetch" href="/blog/assets/js/92.b8173a8d.js"><link rel="prefetch" href="/blog/assets/js/93.fbb9ac54.js"><link rel="prefetch" href="/blog/assets/js/94.12ceedb3.js"><link rel="prefetch" href="/blog/assets/js/95.e5f68998.js"><link rel="prefetch" href="/blog/assets/js/96.9e01b217.js"><link rel="prefetch" href="/blog/assets/js/97.d9d7155c.js"><link rel="prefetch" href="/blog/assets/js/98.741f1672.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.5e9ec4d3.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/img/logo-dxzh3.png" alt="浮尘" class="logo"> <span class="site-name can-hide">浮尘</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><a href="/blog/ops/" class="link-title">运维</a> <span class="title" style="display:none;">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/blog/docker/" class="nav-link">Docker</a></li><li class="dropdown-item"><!----> <a href="/blog/nginx/" class="nav-link">Nginx</a></li><li class="dropdown-item"><!----> <a href="/blog/kubernetes/" class="nav-link">Kubernetes</a></li><li class="dropdown-item"><!----> <a href="/blog/elk/" class="nav-link">ELK</a></li><li class="dropdown-item"><!----> <a href="/blog/ansible/" class="nav-link">Ansible</a></li><li class="dropdown-item"><!----> <a href="/blog/zabbix/" class="nav-link">Zabbix</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程" class="dropdown-title"><a href="/blog/dev/" class="link-title">编程</a> <span class="title" style="display:none;">编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/python/" class="nav-link">Python</a></li><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">Java</a></li><li class="dropdown-item"><!----> <a href="/blog/shell/" class="nav-link">Shell</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">Javascript</a></li><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">Vue</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><a href="/blog/database/" class="link-title">数据库</a> <span class="title" style="display:none;">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/mysql/" class="nav-link">Mysql</a></li><li class="dropdown-item"><!----> <a href="/blog/oracle/" class="nav-link">Oracle</a></li><li class="dropdown-item"><!----> <a href="/blog/mongodb/" class="nav-link">MongoDB</a></li><li class="dropdown-item"><!----> <a href="/blog/redis/" class="nav-link">Redis</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/blog/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/gitlab/" class="nav-link">Gitlab</a></li><li class="dropdown-item"><!----> <a href="/blog/jenkins/" class="nav-link">Jenkins</a></li><li class="dropdown-item"><!----> <a href="/blog/maven/" class="nav-link">Maven</a></li><li class="dropdown-item"><!----> <a href="/blog/harbor/" class="nav-link">Harbor</a></li><li class="dropdown-item"><!----> <a href="/blog/html/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">CSS</a></li><li class="dropdown-item"><!----> <a href="/blog/nodejs/" class="nav-link">Nodejs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/blog/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/tec-doc/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/blog/xysy/" class="nav-link">闲言碎语</a></li><li class="dropdown-item"><!----> <a href="/blog/syjq/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/blog/learning/" class="nav-link">学习</a></li></ul></div></div><div class="nav-item"><a href="/blog/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/blog/shoucang/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/blog/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/blog/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/blog/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/duxingz" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/blog/img/tx4.jpg"> <div class="blogger-info"><h3>浮尘</h3> <span>初阶运维修行者</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><a href="/blog/ops/" class="link-title">运维</a> <span class="title" style="display:none;">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/linux/" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/blog/docker/" class="nav-link">Docker</a></li><li class="dropdown-item"><!----> <a href="/blog/nginx/" class="nav-link">Nginx</a></li><li class="dropdown-item"><!----> <a href="/blog/kubernetes/" class="nav-link">Kubernetes</a></li><li class="dropdown-item"><!----> <a href="/blog/elk/" class="nav-link">ELK</a></li><li class="dropdown-item"><!----> <a href="/blog/ansible/" class="nav-link">Ansible</a></li><li class="dropdown-item"><!----> <a href="/blog/zabbix/" class="nav-link">Zabbix</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程" class="dropdown-title"><a href="/blog/dev/" class="link-title">编程</a> <span class="title" style="display:none;">编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/python/" class="nav-link">Python</a></li><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">Java</a></li><li class="dropdown-item"><!----> <a href="/blog/shell/" class="nav-link">Shell</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">Javascript</a></li><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">Vue</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><a href="/blog/database/" class="link-title">数据库</a> <span class="title" style="display:none;">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/mysql/" class="nav-link">Mysql</a></li><li class="dropdown-item"><!----> <a href="/blog/oracle/" class="nav-link">Oracle</a></li><li class="dropdown-item"><!----> <a href="/blog/mongodb/" class="nav-link">MongoDB</a></li><li class="dropdown-item"><!----> <a href="/blog/redis/" class="nav-link">Redis</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/blog/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/gitlab/" class="nav-link">Gitlab</a></li><li class="dropdown-item"><!----> <a href="/blog/jenkins/" class="nav-link">Jenkins</a></li><li class="dropdown-item"><!----> <a href="/blog/maven/" class="nav-link">Maven</a></li><li class="dropdown-item"><!----> <a href="/blog/harbor/" class="nav-link">Harbor</a></li><li class="dropdown-item"><!----> <a href="/blog/html/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">CSS</a></li><li class="dropdown-item"><!----> <a href="/blog/nodejs/" class="nav-link">Nodejs</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/blog/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/tec-doc/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/blog/xysy/" class="nav-link">闲言碎语</a></li><li class="dropdown-item"><!----> <a href="/blog/syjq/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/blog/learning/" class="nav-link">学习</a></li></ul></div></div><div class="nav-item"><a href="/blog/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/blog/shoucang/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/blog/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/blog/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/blog/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/duxingz" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux 重点记录</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/pages/d47d4e/#重要命令" class="sidebar-link">重要命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#systemctl-命令" class="sidebar-link">systemctl 命令</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#日志查看" class="sidebar-link">日志查看</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#添加持久化别名" class="sidebar-link">添加持久化别名</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#wget-使用" class="sidebar-link">wget 使用</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#进程-端口管理" class="sidebar-link">进程&amp;端口管理</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#防火墙管理" class="sidebar-link">防火墙管理</a></li></ul></li><li><a href="/blog/pages/d47d4e/#包管理" class="sidebar-link">包管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#redhat系列" class="sidebar-link">redhat系列</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#ubuntu系列" class="sidebar-link">ubuntu系列</a></li></ul></li><li><a href="/blog/pages/d47d4e/#shell编程" class="sidebar-link">shell编程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#shell-基础" class="sidebar-link">shell 基础</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#sed流编辑" class="sidebar-link">sed流编辑</a></li><li class="sidebar-sub-header level4"><a href="/blog/pages/d47d4e/#基本语法" class="sidebar-link">基本语法：</a></li><li class="sidebar-sub-header level4"><a href="/blog/pages/d47d4e/#使用实例" class="sidebar-link">使用实例</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#正则表达式" class="sidebar-link">正则表达式</a></li><li class="sidebar-sub-header level4"><a href="/blog/pages/d47d4e/#基本正则" class="sidebar-link">基本正则</a></li><li class="sidebar-sub-header level4"><a href="/blog/pages/d47d4e/#扩展正则" class="sidebar-link">扩展正则</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#gawk" class="sidebar-link">gawk</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#grep" class="sidebar-link">grep</a></li></ul></li><li><a href="/blog/pages/d47d4e/#用途" class="sidebar-link">用途</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/pages/d47d4e/#故障排查" class="sidebar-link">故障排查</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#服务器宕机了怎么办" class="sidebar-link">服务器宕机了怎么办？</a></li><li class="sidebar-sub-header level3"><a href="/blog/pages/d47d4e/#linux经常死机、卡住" class="sidebar-link">Linux经常死机、卡住</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><!----> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/xugaoyi" target="_blank" title="作者" class="beLink" data-v-06225672>xugaoyi</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-11-18</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-06225672><a href="/blog/categories/?category=%E9%9A%8F%E7%AC%94" data-v-06225672>随笔 </a></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">linux 重点记录<!----></h1> <!----> <div class="theme-vdoing-content content__default"><ul><li><a href="#%E9%87%8D%E8%A6%81%E5%91%BD%E4%BB%A4">重要命令</a> <ul><li><a href="#systemctl-%E5%91%BD%E4%BB%A4">systemctl 命令</a></li> <li><a href="#%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B">日志查看</a></li> <li><a href="#%E6%B7%BB%E5%8A%A0%E6%8C%81%E4%B9%85%E5%8C%96%E5%88%AB%E5%90%8D">添加持久化别名</a></li> <li><a href="#wget-%E4%BD%BF%E7%94%A8">wget 使用</a></li> <li><a href="#%E8%BF%9B%E7%A8%8B%E7%AB%AF%E5%8F%A3%E7%AE%A1%E7%90%86">进程&amp;端口管理</a></li> <li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%A1%E7%90%86">防火墙管理</a></li></ul></li> <li><a href="#%E5%8C%85%E7%AE%A1%E7%90%86">包管理</a> <ul><li><a href="#redhat%E7%B3%BB%E5%88%97">redhat系列</a></li> <li><a href="#ubuntu%E7%B3%BB%E5%88%97">ubuntu系列</a></li></ul></li> <li><a href="#shell%E7%BC%96%E7%A8%8B">shell编程</a> <ul><li><a href="#shell-%E5%9F%BA%E7%A1%80">shell 基础</a></li> <li><a href="#sed%E6%B5%81%E7%BC%96%E8%BE%91">sed流编辑</a> <ul><li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法：</a></li> <li><a href="#%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B">使用实例</a></li></ul></li> <li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a> <ul><li><a href="#%E5%9F%BA%E6%9C%AC%E6%AD%A3%E5%88%99">基本正则</a></li> <li><a href="#%E6%89%A9%E5%B1%95%E6%AD%A3%E5%88%99">扩展正则</a></li></ul></li> <li><a href="#gawk">gawk</a></li> <li><a href="#grep">grep</a></li></ul></li> <li><a href="#%E7%94%A8%E9%80%94">用途</a></li> <li><a href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5">故障排查</a> <ul><li><a href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%95%E6%9C%BA%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E">服务器宕机了怎么办？</a></li> <li><a href="#linux%E7%BB%8F%E5%B8%B8%E6%AD%BB%E6%9C%BA%E5%8D%A1%E4%BD%8F">Linux经常死机、卡住</a></li></ul></li></ul> <h2 id="重要命令"><a href="#重要命令" class="header-anchor">#</a> 重要命令</h2> <ol><li><p>网卡重启<br> <code>service network restart</code></p></li> <li><p>网卡配置<br> <code>vim /etc/sysconfig/network-scripts/[网卡名称]</code></p></li> <li><p>sshd配置
+<code>vim /etc/ssh/sshd_config</code></p></li> <li><p>添加.sh 至 systemctl</p></li></ol> <p>思路：<br>
+(1)创建并编写xxx.service 文件，并将其放在/usr/lib/systemd/system/目录下<br>
+(2)使用<code>systemctl daemon-reload</code>重载服务<br>
+(3)使用<code>systemctl start/stop/status ...</code>等命令<br>
+参考链接：</p> <blockquote><p>https://www.cnblogs.com/keystone/p/13158117.html</p></blockquote> <ol><li>关机命令</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>#立即关机
+sudo shutdown -h now
+
+#重启系统
+sudo reboot
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="systemctl-命令"><a href="#systemctl-命令" class="header-anchor">#</a> systemctl 命令</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#启动服务
+systemctl start xxx.service
+
+#停止服务
+systemctl stop xxx.service
+
+#重启服务
+systemctl restart xxx.service
+
+#添加服务开机自启动
+systemctl enable xxx.service
+
+#不开机自启
+systemctl disable xxx.service
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="日志查看"><a href="#日志查看" class="header-anchor">#</a> 日志查看</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#查看单个服务启动停止日志
+journalctl -u xxx.service
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="添加持久化别名"><a href="#添加持久化别名" class="header-anchor">#</a> 添加持久化别名</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>#1. 进入用户主目录
+cd ~
+
+#2. 文本编辑器打开 &quot;.bashrc&quot; 文件：
+vim .bashrc
+
+#3. 在文件末尾添加别名，例如
+alias ll='ls -alF'
+
+#4. 保存退出
+
+#5. 重载配置
+source .bashrc
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ol start="3"><li>在文件末尾添加别名</li></ol> <h3 id="wget-使用"><a href="#wget-使用" class="header-anchor">#</a> wget 使用</h3> <p>参考链接：</p> <blockquote><p>https://www.cnblogs.com/lukelook/p/11201098.html</p></blockquote> <h3 id="进程-端口管理"><a href="#进程-端口管理" class="header-anchor">#</a> 进程&amp;端口管理</h3> <ol><li>查询进程/端口</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code># 查看进程id
+ps -aux | grep &lt;进程名称&gt;
+ps -ef | grep &lt;进程名称&gt;
+
+# 根据进程id查询占用端口
+netstat -tulnp | grep &lt;进程id&gt;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><blockquote><p>ps 命令通常用于查看系统中运行的进程信息（如进程 ID、进程名称、占用的 CPU 、内存等等），而 netstat 命令主要用于显示系统网络连接状态（比如 IP 地址、端口号、连接状态等信息），可以用来查看网络连接是否正常、哪些端口被占用以及与哪些 IP 地址建立了连接等。</p></blockquote> <ol start="2"><li>杀死进程<br> <code>kill -9 pid</code></li></ol> <h3 id="防火墙管理"><a href="#防火墙管理" class="header-anchor">#</a> 防火墙管理</h3> <ul><li>Centos7</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># 1. 已开放端口查询
+firewall-cmd --list-ports --zone=public
+
+# 2. 添加端口
+# --permanent 选项表示将端口添加到永久规则中，使其在系统重启后仍然生效。
+
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
+# 3. 重载生效
+firewall-cmd --reload
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>Ubuntu</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>#查询
+sudo ufw status
+
+#开放
+sudo ufw allow 8080/tcp
+
+#重载
+sudo ufw reload
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="包管理"><a href="#包管理" class="header-anchor">#</a> 包管理</h2> <h3 id="redhat系列"><a href="#redhat系列" class="header-anchor">#</a> redhat系列</h3> <ol><li><p>列出已安装包<br> <code>yum list installed</code></p></li> <li></li></ol> <h3 id="ubuntu系列"><a href="#ubuntu系列" class="header-anchor">#</a> ubuntu系列</h3> <h2 id="shell编程"><a href="#shell编程" class="header-anchor">#</a> shell编程</h2> <h3 id="shell-基础"><a href="#shell-基础" class="header-anchor">#</a> shell 基础</h3> <ol><li><p>.sh 文件第一行需要声明所用 shell ，通常为：<code>#!/bin/bash</code></p></li> <li><p>多个命令可用分号间隔并执行，如：<code>A ; B ；C</code>。</p></li> <li><p>执行.sh文件要给予其 x 权限，即：<code>u + x</code></p></li> <li><p>取变量值方法为在变量前增加美元符号，例：$HOME,当存在冲突时，要加转义字符 <code>&quot;\&quot;</code></p></li> <li><p>将命令赋值给变量的方法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>(1)使用反引号字符（``）;
+(2)使用$()  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>输入重定向，即将文件内容输出到命令中，基本语法为 <code>command &lt; inputfile</code></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>(1)有两种输入重定向方式，分别为 &lt; 和 &lt;&lt; .
+ 示例：对a.txt 文件中的文本进行排序
+ sort &lt; a.txt
+
+(2)内联输入重定向，语法为command &lt;&lt; mark ,mark为指定的标记符，用来标记输入数据的开始和结束.
+示例：
+`wc &lt;&lt; EOF
+&gt;string1
+&gt;string2
+&gt;string3
+&gt;EOF
+`
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></li> <li><p>输出重定向，即将命令结果输出到文件中，基本语法为 <code>command &gt; outputfile</code></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>（1）有两种重定向方式，分别为 &gt; 和 &gt;&gt; .
+（2）两种方式的区别：&gt; 是写入到文件，故而会清空原文件内容，&gt;&gt; 则是追加到文件末尾.
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>管道命令，用 | 符号将前一个命令的输出作为后一个命令的输入，基本语法为 <code>command1 | command2</code></p></li> <li><p>数学表达式操作,基本语法为：<code>$[operation]</code>，即用中括号 括住数学表达式,示例：
+<code>var1=$[3 * 9]</code></p></li> <li><p>查看命令退出码 <code>$?</code>，用以判断命令是否正常结束。通常，退出码为0时表示命令成功结束，否则为命令执行出错异常退出;退出状态码区间 0~255。</p></li> <li><p>可用 <strong>exit</strong> 指定退出码，例：<code>exit 30</code></p></li> <li><p>if-then 语法结构</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if command
+then
+    commands
+fi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>或</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if command ; then
+commands
+fi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>if-then-else语法结构</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if command 
+then 
+    commands
+else
+    commands
+fi
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p>test 命令语法结构： <code>test conditions</code>  ，其主要用途为：</p></li></ol> <ul><li>数值比较</li> <li>字符串比较</li> <li>文件比较<br>
+也可用另一种表达方式：<div class="language- line-numbers-mode"><pre class="language-text"><code>if [condition]
+then
+    commands
+fi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li></ul> <ol start="15"><li>多条件判断语法</li></ol> <div class="language- extra-class"><pre><code>- `[condition1] &amp;&amp; [condition2]`
+- `[condition1] || [condition2]`
+</code></pre></div><ol start="16"><li><p>if-then 高级特性<br>
+（1）使用双括号运算数学表达式，基本语法为<code>((expression))</code>。示例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if (( $val ** 2 &gt; 90))
+then
+    ((val2 = $val * 10))
+fi
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>（2）使用双方括号进行模式匹配，基本语法为<code>[[expression]]</code>。示例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>if [[ $USER == r* ]]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>for 循环的基本语法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for i in list
+do
+    commands
+done
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>字段分隔符<code>IFS</code> 用以分割长字符串</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#默认分隔符为空格
+#当需要调整分隔符为回车或其他字符时，使用下面的代码改变IFS的值
+IFS=$'\n'
+
+#可指定多个分隔符,将字符拼接起来即可，如：
+IFS=$'\n':;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p>for 循环搭配通配符 ,示例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for f in /home/test/*
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>C语言风格for循环，示例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for ((i=1;i&lt;10;i++))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>while 循环语法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>while test command
+do
+    commands
+done
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>until 语法：</p></li> <li><p>case 语法：</p></li> <li><p>break、continue使用 与其它语言相似，break可指定跳出层数。</p></li> <li><p>循环输出处理方式</p></li></ol> <ul><li>重定向方式，示例:<div class="language- line-numbers-mode"><pre class="language-text"><code>for ((a=1;a&lt;10;a++))
+do
+    echo &quot;a is $a&quot;
+done &gt; demo.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li>管线方式，示例：<div class="language- line-numbers-mode"><pre class="language-text"><code>for(....)
+do
+    .....
+done | sort
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ul> <ol><li><p>命令行参数</p> <ul><li><strong>$0</strong> : 程序名</li> <li><strong>$1-9</strong> : 参数1-参数9</li> <li><strong>${10-...}</strong> :超过9个参数的参数表示</li> <li><strong>$#</strong> : 表示参数个数</li> <li><strong>$*</strong> : 表示所有参数构成的单个字符串</li> <li><strong>$@</strong> : 表示所有参数构成的同一字符串的多个独立的单词</li></ul></li> <li><p>读取用户输入
+(1)read 命令</p> <ul><li>read 提示<br> <code>read -p &quot;....&quot; name</code></li> <li>read 超时 : -t后为设定的秒数<br> <code>read -t 10 -p &quot;&quot; name</code></li> <li>read 隐藏输入
+<code>read -s -p &quot;&quot; password</code></li> <li>read 读取文件</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>cat file1 | while read line
+do
+    .....
+done
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>捕捉信号</p></li> <li><p>后台运行脚本，在后面加 <strong>&amp;</strong> 符号</p></li> <li><p>定期执行命令：
+<code>crontab</code></p></li> <li><p>函数编程</p></li></ol> <p>(1)基本函数语法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function a{
+    commands
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>或</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a(){
+    commands
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>(2)使用return 返回值<br>
+(3)使用echo 输出值<br>
+(4)局部变量和全局变量</p> <ul><li>局部变量定义需在变量前使用 <code>local</code></li></ul> <p>(5)变量的传递及处理
+(6)库文件创建/引入：<code>source 或 .</code></p> <h3 id="sed流编辑"><a href="#sed流编辑" class="header-anchor">#</a> sed流编辑</h3> <h4 id="基本语法"><a href="#基本语法" class="header-anchor">#</a> 基本语法：</h4> <div class="language- extra-class"><pre><code>` sed [option] [files]`  
+</code></pre></div><h4 id="使用实例"><a href="#使用实例" class="header-anchor">#</a> 使用实例</h4> <ol><li>执行多个命令, <code>-e</code> 选项<div class="language- line-numbers-mode"><pre class="language-text"><code>sed -e &quot;s/hello/hi/;s/dog/cat/&quot; ./file.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>执行命令文件，<code>-f</code> 选项<div class="language- line-numbers-mode"><pre class="language-text"><code>sed -f script.sed ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div>执行<code>&quot;cat script.sed&quot;</code>，可看到文件中命令如下所示：<div class="language- line-numbers-mode"><pre class="language-text"><code>s/bb/aa/
+s/red/green/
+....
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li>多个命令还可以用下面组合的方式<div class="language- line-numbers-mode"><pre class="language-text"><code>sed '3{
+s/local/global/
+s/hello/hi/
+....
+}' ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ol> <ul><li><p>替换 (s)<br>
+（1）字符替换</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> sed &quot;s/cat/dog/&quot; ./a.txt 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>（2）管线形式字符替换</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> echo &quot;helloworld&quot; | sed &quot;s/hello/welcome/&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>替换选项</strong></p> <ol><li>g  :替换所有匹配文本</li> <li>数字  ：替换第几处匹配</li> <li>w file  ：将替换结果写入到文件</li></ol> <p>示例：将data.txt文件中的匹配结果写入到b.txt中</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;s/dog/cat/w b.txt&quot; ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>指定行替换</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;2,$s/dog/cat/&quot; ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>指定文本行替换</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;/user/s/aaa/bbb/&quot; ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>删除行 (d)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed '3d' ./data.txt         #删除第三行
+sed '3,10d' ./data.txt      #删除3-10区间的行
+sed '/jack/d' ./data.txt    #删除包含“jack”的行
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>插入行 (i) ：指定行前增加新行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;3i\hello world&quot; ./data.txt     # 将特定行插入到data.txt的第三行前
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>附加行 (a) : 指定行后增加新行</p></li> <li><p>修改行 (c) : 修改整行内容</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;3c\this is new line&quot; ./data.txt
+sed &quot;/home/c\this is new line&quot; ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>转换命令 (y): 字符一一映射的替换</p></li> <li><p>打印行 (p)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#打印替换后的行
+sed -n &quot;s/hello/world/p&quot; ./data.txt
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul> <h3 id="正则表达式"><a href="#正则表达式" class="header-anchor">#</a> 正则表达式</h3> <h4 id="基本正则"><a href="#基本正则" class="header-anchor">#</a> 基本正则</h4> <ol><li>行首(^)</li> <li>行尾($)</li> <li>点号(.) :匹配换行符外的任意单个字符</li> <li>字符组([]) :匹配希望出现在方括号中的字符<div class="language- line-numbers-mode"><pre class="language-text"><code>sed &quot;s/[aA]rm/ban/&quot; ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>排除型字符组,即匹配字符组外的字符，表现形式为字符组前面加 <code>^</code> 字符。示例如下：<div class="language- line-numbers-mode"><pre class="language-text"><code>sed -n '/[^abc]at/p' ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>区间:用来匹配某个区间的字符，表现形式通常为区间首末字符中添加 <code>-</code> 字符，示例如下：<div class="language- line-numbers-mode"><pre class="language-text"><code>sed -n '/[0-6]ye/p' ./data.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li>星号(*):<br>
+字符后面放置星号表示该字符必须在匹配模式的文本中出现0次或多次，示例如下：<div class="language- line-numbers-mode"><pre class="language-text"><code>sed -n '/u*nion/p' ./data.txt
+#可以匹配到
+union aaab
+uunion abaf
+anion abga
+
+#不能匹配到
+uonion aiitap
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li></ol> <h4 id="扩展正则"><a href="#扩展正则" class="header-anchor">#</a> 扩展正则</h4> <p><em>该部分适用于gwak,但不支持sed</em></p> <ol><li>问号(?) :表示?前面的字符可以出现0次或1次，示例<div class="language- line-numbers-mode"><pre class="language-text"><code>'/a?bp/'
+#可以匹配到
+abp kdkdkkd
+aabp ldllgld
+
+#不可匹配到
+aaabp jfallga
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li>加号(+):表示+前面字符出现1次或多次，至少需要出现1次</li> <li>管道符号( | ) ：匹配其中一个模式</li></ol> <h3 id="gawk"><a href="#gawk" class="header-anchor">#</a> gawk</h3> <ol><li><p>基本语法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>gawk options program file
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>可选变量</p> <p>(1) -F :指定分隔符，默认分隔符为空格</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#示例：使用冒号做分隔符
+gawk -F: '{print $1,$2}' /etc/passwd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>(2) -f :用于从文件中读取程序</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#示例:指定myscript.gawk 做程序文件
+gawk -F: -f ./myscript.gawk /etc/passwd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>数据字段变量。
+gawk 默认以空格分割每一行的字段，其中<br>
+(1) $0 : 整个文本行<br>
+(2) $1 : 文本行第一个字段<br>
+(3) $n :文本行第n个字段<br>
+示例：</p></li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>    #假如存在以下一行文本
+    1 root      20   0  193724   6828   4180 S   0.0  0.4   0:03.76 systemd
+        
+    #使用gwak输出root,193724
+    gawk '{print $2,$5}'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="4"><li>BEGIN 和 END，它们分别用于程序执行前后的操作，示例如下：</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>gawk 'BEGIN{print &quot;now start&quot;}{print $0}END{print &quot;end!&quot;}' /etc/passwd
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="grep"><a href="#grep" class="header-anchor">#</a> grep</h3> <ol><li><p>简介</p></li> <li><p>语法规则<br>
+grep [选项] pattern [文件名]</p></li> <li><p>常用选项</p></li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>常用选项：
+　　-E ：开启扩展（Extend）的正则表达式。
+　　-i ：忽略大小写（ignore case）。
+　　-v ：反过来（invert），只打印没有匹配的，而匹配的反而不打印。
+　　-n ：显示行号
+　　-w ：被匹配的文本只能是单词，而不能是单词中的某一部分，如文本中有liker，而我搜寻的只是like，就可以使用-w选项来避免匹配liker
+　　-c ：显示总共有多少行被匹配到了，而不是显示被匹配到的内容，注意如果同时使用-cv选项是显示有多少行没有被匹配到。
+　　-o ：只显示被模式匹配到的字符串。
+　　--color :将匹配到的内容以颜色高亮显示。
+　　-A  n：显示匹配到的字符串所在的行及其后n行，after
+　　-B  n：显示匹配到的字符串所在的行及其前n行，before
+　　-C  n：显示匹配到的字符串所在的行及其前后各n行，context
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ol start="4"><li>示例</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>#单个文件中查找关键词
+grep 'Class 1' Students.txt
+
+#从多个文件中查找关键词
+grep &quot;omc&quot; /etc/passwd /etc/shadow
+
+#查找多个字符串
+grep -e 'Class 1' -e Todd Students.txt
+
+#可以将-r开关与grep一起使用，以递归方式搜索目录及其子目录中的所有文件
+grep -r pattern /directory/to/search
+
+#查找string1 或 string2
+grep -E 'string1|string2' filename
+
+#上下文的控制
+# A   查询匹配内容的一行之外，后n行的显示
+# B   查询匹配内容的一行之外，前n行的显示
+# C   查询匹配内容的一行之外，显示上下n行
+# 以下为匹配yum 所在行及其后三行
+grep -n 'yum' -A 3 logs_bak.txt
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><ol start="5"><li>参考链接</li></ol> <blockquote><p>https://www.cnblogs.com/ftl1012/p/grep.html
+https://cloud.tencent.com/developer/article/1554542</p></blockquote> <h2 id="用途"><a href="#用途" class="header-anchor">#</a> 用途</h2> <ol><li>linux 分区扩容
+参考链接:</li></ol> <blockquote><p>https://blog.csdn.net/qq_31283333/article/details/108014043</p></blockquote> <h2 id="故障排查"><a href="#故障排查" class="header-anchor">#</a> 故障排查</h2> <h3 id="服务器宕机了怎么办"><a href="#服务器宕机了怎么办" class="header-anchor">#</a> 服务器宕机了怎么办？</h3> <blockquote><p>启动机器，看能否登陆，如果能登陆，请检查:</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>a、是否是应用程序导致内存溢出或者泄露导致
+b、是否是进程过多或者不断创建，耗尽资源导致
+c、是否是数据库程序死锁，连接数过多导致
+d、是否是应用程序异常导致
+e、是否是流量负载过大导致
+f、 是否是遭受黑客入侵攻击导致
+g、是否是误操作导致
+如果无法查看故障现场，则可以查询系统日志查看是否有异常记录。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="linux经常死机、卡住"><a href="#linux经常死机、卡住" class="header-anchor">#</a> Linux经常死机、卡住</h3> <p>linux操作系统服务器在出现死机或卡顿情况，可以参考以下项目进行整体排查：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a、检查服务器进程与服务否占用了太多的内存或是没有释放内存，当服务器内存用完后，然后就会很快宕机；
+b、看看/var/spool/cron 里面是不是有cron（计划任务、自动任务）在对应时间段内执行；
+c、检查web服务器的参数是否超过了服务器的性能，如允许最大连接数过高等；
+d、进程数很高，服务瘫痪，机器假死（例如zombie进程是否过多，一直占用资源）；
+e、cat  /var/log/message查看系统日志是否有异常
+f、检查磁盘是否有坏块。（可使用badblocks命令配合参数）
+g、内核消耗过大，查看是否有瞬间资源占用过大的进程或服务；
+h、ps -ef 查看进程异常否，是否存在攻击
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/duxingz/edit/master/docs/_posts/随笔/linux 重点记录.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <!----></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/blog/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/blog/pages/eeda61/"><div>
+            学习python多线程
+            <!----></div></a> <span class="date">11-27</span></dt></dl><dl><dd>02</dd> <dt><a href="/blog/pages/b2bcaa/"><div>
+            python中几种常见数据结构的使用
+            <!----></div></a> <span class="date">11-27</span></dt></dl><dl><dd>03</dd> <dt><a href="/blog/pages/4cc7bb/"><div>
+            使用minikube安装k8s单机版
+            <!----></div></a> <span class="date">11-27</span></dt></dl> <dl><dd></dd> <dt><a href="/blog/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:931811420@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://music.163.com/#/playlist?id=360359131" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+     © 2022-2023
+    <span></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.c1146525.js" defer></script><script src="/blog/assets/js/2.4ba14c4a.js" defer></script><script src="/blog/assets/js/17.b8c8d6e5.js" defer></script>
+  </body>
+</html>
